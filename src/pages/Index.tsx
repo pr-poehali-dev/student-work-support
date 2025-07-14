@@ -98,6 +98,33 @@ export default function Index() {
     { name: "Отчет по практике", price: "от 2 000 ₽", time: "5-7 дней" }
   ];
 
+  const testimonials = [
+    {
+      name: "Анна Петрова",
+      role: "Студентка МГУ",
+      text: "Заказывала дипломную работу по экономике. Работа выполнена на отлично, все требования соблюдены. Защитилась на 5!",
+      rating: 5
+    },
+    {
+      name: "Михаил Сидоров",
+      role: "Магистрант СПбГУ",
+      text: "Отличный сервис! Курсовая по программированию была готова раньше срока. Автор учел все пожелания.",
+      rating: 5
+    },
+    {
+      name: "Елена Козлова",
+      role: "Студентка МФТИ",
+      text: "Очень довольна качеством работы. Реферат по физике написан грамотно, с актуальными источниками.",
+      rating: 5
+    },
+    {
+      name: "Дмитрий Волков",
+      role: "Аспирант МГТУ",
+      text: "Помогли с отчетом по практике. Работа соответствует всем требованиям ВУЗа. Рекомендую!",
+      rating: 5
+    }
+  ];
+
   const faqItems = [
     {
       question: "Как гарантируется качество работы?",
@@ -330,8 +357,43 @@ export default function Index() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">Отзывы наших клиентов</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Более 5000 довольных студентов уже получили качественные работы
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow animate-fade-in">
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-purple-500 rounded-full flex items-center justify-center mr-4">
+                      <Icon name="User" size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
+                  <div className="flex items-center">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Icon key={i} name="Star" size={16} className="text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Часто задаваемые вопросы</h2>
@@ -393,6 +455,72 @@ export default function Index() {
             <Icon name="MessageCircle" size={20} className="mr-2" />
             Заказать работу со скидкой
           </Button>
+        </div>
+      </section>
+
+      {/* SEO Content Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">О нашем образовательном центре</h2>
+            <div className="prose max-w-none text-gray-700 leading-relaxed">
+              <p className="text-lg mb-6">
+                <strong>Реферат Центр</strong> — это ведущая организация в сфере образовательных услуг, которая специализируется на 
+                профессиональном выполнении студенческих работ на заказ. Мы работаем на рынке образовательных услуг уже более 10 лет 
+                и за это время помогли тысячам студентов и школьников успешно справиться с академическими задачами.
+              </p>
+              
+              <h3 className="text-2xl font-semibold mb-4 mt-8">Наши услуги</h3>
+              <p className="mb-4">
+                Мы выполняем все виды студенческих работ: <strong>дипломные работы</strong>, <strong>курсовые проекты</strong>, 
+                <strong>рефераты</strong>, <strong>контрольные работы</strong>, <strong>эссе</strong>, <strong>отчеты по практике</strong>, 
+                <strong>диссертации</strong>, <strong>решение задач</strong>, <strong>НИР</strong>, <strong>сочинения</strong> и многие другие виды академических работ.
+              </p>
+              
+              <h3 className="text-2xl font-semibold mb-4 mt-8">Преимущества работы с нами</h3>
+              <ul className="list-disc pl-6 mb-6 space-y-2">
+                <li><strong>Быстрое выполнение:</strong> Минимальные сроки от 1 дня без потери качества</li>
+                <li><strong>Гарантия качества:</strong> 90 дней гарантии на все виды работ с бесплатными доработками</li>
+                <li><strong>Опытные авторы:</strong> Команда из 200+ специалистов с высшим образованием</li>
+                <li><strong>Доступные цены:</strong> Оптимальные цены с возможностью рассрочки без переплат</li>
+                <li><strong>Оригинальность:</strong> Все работы проверяются на уникальность</li>
+                <li><strong>Соблюдение сроков:</strong> Строгое соблюдение договоренностей по времени</li>
+              </ul>
+              
+              <h3 className="text-2xl font-semibold mb-4 mt-8">Процесс заказа</h3>
+              <p className="mb-4">
+                Заказать работу в нашем центре очень просто. Достаточно заполнить форму заявки на сайте, указав все требования 
+                к работе. Наш менеджер свяжется с вами в течение 15 минут для уточнения деталей и расчета стоимости. 
+                После согласования всех условий и внесения предоплаты 50%, мы приступаем к выполнению вашего заказа.
+              </p>
+              
+              <h3 className="text-2xl font-semibold mb-4 mt-8">Работаем со всеми учебными заведениями</h3>
+              <p className="mb-4">
+                Мы сотрудничаем со студентами различных учебных заведений: университетов, институтов, колледжей, техникумов 
+                и школ. Наши авторы знакомы с требованиями различных образовательных организаций и всегда учитывают специфику 
+                конкретного учебного заведения при выполнении работ.
+              </p>
+              
+              <h3 className="text-2xl font-semibold mb-4 mt-8">Все предметы и дисциплины</h3>
+              <p className="mb-4">
+                Наша команда специалистов охватывает все области знаний: от точных наук (математика, физика, химия) до 
+                гуманитарных дисциплин (история, философия, литература). Мы выполняем работы по экономике, менеджменту, 
+                маркетингу, психологии, педагогике, праву, медицине, программированию, дизайну и многим другим предметам.
+              </p>
+              
+              <h3 className="text-2xl font-semibold mb-4 mt-8">Конфиденциальность и безопасность</h3>
+              <p className="mb-4">
+                Мы гарантируем полную конфиденциальность всех данных наших клиентов. Информация о заказах и персональные данные 
+                надежно защищены и не передаются третьим лицам. Все работы выполняются с нуля специально для каждого клиента.
+              </p>
+              
+              <h3 className="text-2xl font-semibold mb-4 mt-8">Связь с нами</h3>
+              <p className="mb-4">
+                Наша служба поддержки работает круглосуточно 7 дней в неделю. Вы можете связаться с нами по телефону, электронной 
+                почте или через онлайн-чат на сайте. Мы всегда готовы ответить на ваши вопросы и помочь с выбором подходящей услуги.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
