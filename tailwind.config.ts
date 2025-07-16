@@ -61,6 +61,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Pop-art/Comic colors
+				comic: {
+					green: '#4ADF3A',
+					purple: '#8B5CF6',
+					orange: '#FF6B35',
+					yellow: '#FFD700',
+					red: '#FF4757',
+					blue: '#2F80ED',
+					pink: '#FF69B4',
+					cyan: '#17A2B8'
 				}
 			},
 			borderRadius: {

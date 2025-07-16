@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Fredoka+One:wght@400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,11 +15,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 142 71% 45%;
+    --primary: 110 100% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 48 100% 67%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -109,5 +109,51 @@
   h5,
   h6 {
     font-family: "Montserrat", sans-serif;
+  }
+}
+
+@layer components {
+  .comic-style {
+    @apply relative;
+  }
+  
+  .comic-style::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+  }
+  
+  .comic-bubble {
+    @apply relative bg-white border-4 border-black rounded-2xl p-4 shadow-lg;
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.8));
+  }
+  
+  .comic-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid white;
+    filter: drop-shadow(0 4px 0 rgba(0,0,0,0.8));
+  }
+  
+  .comic-text {
+    font-family: "Fredoka One", cursive;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+  }
+  
+  .halftone-bg {
+    background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 2px, transparent 2px);
+    background-size: 8px 8px;
   }
 }

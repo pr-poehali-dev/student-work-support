@@ -145,23 +145,27 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-comic-green/20 to-comic-purple/20 comic-style halftone-bg">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-4 border-black">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Icon name="GraduationCap" className="text-primary" size={32} />
-              <h1 className="text-2xl font-bold text-primary">Реферат Центр</h1>
+            <div className="flex items-center space-x-3">
+              <div className="bg-gradient-to-r from-comic-green to-comic-purple p-2 rounded-xl shadow-lg transform rotate-3" style={{filter: 'drop-shadow(3px 3px 0px rgba(0,0,0,0.8))'}}>
+                <Icon name="GraduationCap" className="h-8 w-8 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-black comic-text">РЕФЕРАТ ЦЕНТР</h1>
+                <p className="text-sm text-gray-700 font-semibold">Качественные работы на заказ</p>
+              </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-2">
-                <Icon name="Phone" size={20} className="text-gray-600" />
-                <span className="text-gray-600">+7 (800) 123-45-67</span>
+              <div className="hidden md:flex items-center space-x-2 text-black font-bold">
+                <Icon name="Phone" className="h-5 w-5" />
+                <span className="comic-text">+7 (800) 123-45-67</span>
               </div>
-              <Button variant="outline" size="sm">
-                <Icon name="MessageCircle" size={16} className="mr-2" />
-                Чат
+              <Button className="bg-comic-orange hover:bg-comic-red text-white comic-text text-lg px-6 py-3 border-4 border-black shadow-lg transform hover:scale-105 transition-all" style={{filter: 'drop-shadow(4px 4px 0px rgba(0,0,0,0.8))'}}>
+                ЗАКАЗАТЬ!
               </Button>
             </div>
           </div>
@@ -169,42 +173,63 @@ export default function Index() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-br from-comic-green/30 to-comic-purple/30 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Студенческие работы <br />
-                <span className="text-yellow-300">на заказ</span>
+            <div className="animate-fade-in text-center md:text-left">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black comic-text">
+                СТУДЕНЧЕСКИЕ РАБОТЫ 
+                <span className="text-comic-orange block transform -rotate-2" style={{filter: 'drop-shadow(3px 3px 0px rgba(0,0,0,0.8))'}}>
+                  НА ЗАКАЗ!
+                </span>
               </h1>
-              <p className="text-xl mb-8 text-green-100">
-                Выполняем дипломы, курсовые, рефераты и другие работы. 
-                Быстро, качественно, с гарантией.
-              </p>
-              <div className="flex flex-wrap gap-4 mb-8">
-                <Badge variant="secondary" className="bg-white/20 text-white">
+              <div className="comic-bubble mb-8 max-w-lg mx-auto md:mx-0">
+                <p className="text-lg text-black font-semibold leading-relaxed">
+                  Выполняем дипломы, курсовые, рефераты и другие работы. 
+                  Быстро, качественно, с гарантией!
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 mb-8 justify-center md:justify-start">
+                <Badge className="bg-comic-green text-white comic-text text-lg px-4 py-2 border-4 border-black shadow-lg transform rotate-1" style={{filter: 'drop-shadow(3px 3px 0px rgba(0,0,0,0.8))'}}>
                   <Icon name="Clock" size={16} className="mr-2" />
-                  Сроки от 1 дня
+                  ОТ 1 ДНЯ!
                 </Badge>
-                <Badge variant="secondary" className="bg-white/20 text-white">
+                <Badge className="bg-comic-purple text-white comic-text text-lg px-4 py-2 border-4 border-black shadow-lg transform -rotate-1" style={{filter: 'drop-shadow(3px 3px 0px rgba(0,0,0,0.8))'}}>
                   <Icon name="Shield" size={16} className="mr-2" />
-                  Гарантия 90 дней
+                  90 ДНЕЙ!
                 </Badge>
-                <Badge variant="secondary" className="bg-white/20 text-white">
+                <Badge className="bg-comic-orange text-white comic-text text-lg px-4 py-2 border-4 border-black shadow-lg transform rotate-2" style={{filter: 'drop-shadow(3px 3px 0px rgba(0,0,0,0.8))'}}>
                   <Icon name="CreditCard" size={16} className="mr-2" />
-                  Рассрочка 0%
+                  БЕЗ %!
                 </Badge>
               </div>
             </div>
             
-            <Card className="animate-scale-in">
-              <CardHeader>
-                <CardTitle className="text-center">Заказать работу</CardTitle>
-                <CardDescription className="text-center">
+            <div className="relative">
+              <img src="/img/283899ad-7775-43bc-af0b-8abe91ecb686.jpg" alt="Студентка с книгами" className="w-full max-w-md mx-auto rounded-2xl border-4 border-black shadow-lg transform rotate-3 hover:rotate-6 transition-transform" style={{filter: 'drop-shadow(8px 8px 0px rgba(0,0,0,0.8))'}} />
+              <div className="absolute -top-4 -right-4 bg-comic-yellow p-4 rounded-full border-4 border-black comic-text text-xl font-bold transform rotate-12 animate-bounce" style={{filter: 'drop-shadow(4px 4px 0px rgba(0,0,0,0.8))'}}>
+                HOT!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Order Form Section */}
+      <section className="py-20 bg-gradient-to-br from-comic-yellow/20 to-comic-orange/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-black comic-text mb-4">ЗАКАЗАТЬ РАБОТУ!</h2>
+              <div className="comic-bubble mx-auto max-w-lg">
+                <p className="text-lg text-black font-semibold">
                   Оставьте заявку и получите расчет в течение 15 минут
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
+                </p>
+              </div>
+            </div>
+            
+            <Card className="animate-scale-in border-4 border-black shadow-lg bg-white" style={{filter: 'drop-shadow(8px 8px 0px rgba(0,0,0,0.8))'}}>
+              <CardContent className="space-y-4 p-8">
                 <div className="grid grid-cols-2 gap-4">
                   <Input
                     name="name"
@@ -253,9 +278,9 @@ export default function Index() {
                   value={formData.deadline}
                   onChange={handleInputChange}
                 />
-                <Button className="w-full bg-gradient-to-r from-green-600 to-purple-600 hover:from-green-700 hover:to-purple-700">
-                  <Icon name="Send" size={16} className="mr-2" />
-                  Заказать работу
+                <Button className="w-full bg-gradient-to-r from-comic-green to-comic-purple hover:from-comic-orange hover:to-comic-red text-white comic-text text-xl px-8 py-6 border-4 border-black shadow-lg transform hover:scale-105 transition-all" style={{filter: 'drop-shadow(6px 6px 0px rgba(0,0,0,0.8))'}}>
+                  <Icon name="Send" size={20} className="mr-2" />
+                  ЗАКАЗАТЬ РАБОТУ!
                 </Button>
                 <p className="text-sm text-gray-600 text-center">
                   Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных
