@@ -151,7 +151,7 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg shadow-lg">
+              <div className="bg-green-600 p-2 rounded-lg shadow-lg">
                 <Icon name="GraduationCap" className="h-8 w-8 text-white" />
               </div>
               <div>
