@@ -147,25 +147,35 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-comic-green/20 to-comic-purple/20 comic-style halftone-bg">
       {/* Header */}
-      <header className="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-4 border-black">
+      <header className="bg-white shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-comic-green to-comic-purple p-2 rounded-xl shadow-lg transform rotate-3" style={{filter: 'drop-shadow(3px 3px 0px rgba(0,0,0,0.8))'}}>
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg shadow-lg">
                 <Icon name="GraduationCap" className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-black comic-text">РЕФЕРАТ ЦЕНТР</h1>
-                <p className="text-sm text-gray-700 font-semibold">Качественные работы на заказ</p>
+                <h1 className="text-2xl font-bold text-gray-800">РЕФЕРАТ ЦЕНТР</h1>
+                <p className="text-sm text-gray-600">Качественные работы на заказ</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-2 text-black font-bold">
-                <Icon name="Phone" className="h-5 w-5" />
-                <span className="comic-text">+7 (800) 123-45-67</span>
+              <div className="hidden lg:flex items-center space-x-4">
+                <a href="https://t.me/referatcentr" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors">
+                  <Icon name="Send" className="h-5 w-5" />
+                  <span className="font-medium">Telegram</span>
+                </a>
+                <a href="https://vk.com/referatcentr" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors">
+                  <Icon name="Users" className="h-5 w-5" />
+                  <span className="font-medium">ВКонтакте</span>
+                </a>
               </div>
-              <Button className="bg-comic-orange hover:bg-comic-red text-white comic-text text-lg px-6 py-3 border-4 border-black shadow-lg transform hover:scale-105 transition-all" style={{filter: 'drop-shadow(4px 4px 0px rgba(0,0,0,0.8))'}}>
-                ЗАКАЗАТЬ!
+              <div className="hidden md:flex items-center space-x-2 text-gray-800 font-bold">
+                <Icon name="Phone" className="h-5 w-5" />
+                <span>+7 (800) 123-45-67</span>
+              </div>
+              <Button className="bg-gradient-to-r from-green-600 to-purple-600 hover:from-green-700 hover:to-purple-700 text-white">
+                ЗАКАЗАТЬ
               </Button>
             </div>
           </div>
