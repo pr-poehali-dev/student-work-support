@@ -466,7 +466,7 @@ export default function Index() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-2xl font-bold text-primary">{type.price}</span>
+                    <span className="text-2xl font-bold text-[#16a300]">{type.price}</span>
                     <Badge variant="outline">{type.time}</Badge>
                   </div>
                   <Button className="w-full" variant="outline">
