@@ -593,9 +593,29 @@ export default function Index() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Контакты</h4>
               <div className="space-y-2 text-gray-400">
-                <p>+7 (800) 123-45-67</p>
-                <p>info@referat-center.ru</p>
-                <p>Работаем круглосуточно</p>
+                <div className="flex items-center space-x-2">
+                  <Icon name="Phone" size={16} />
+                  <p>+7 (800) 123-45-67</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Icon name="Mail" size={16} />
+                  <p>info@referat-center.ru</p>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <Icon name="MapPin" size={16} className="mt-1" />
+                  <div>
+                    <p>г. Брянск, ул. Дуки 68,</p>
+                    <p>офис 9</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <Icon name="Clock" size={16} className="mt-1" />
+                  <div>
+                    <p>Режим работы:</p>
+                    <p>Пн-Пт: 9:00 - 18:00</p>
+                    <p>Сб-Вс: выходной</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
